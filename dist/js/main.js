@@ -15,13 +15,15 @@ let voices = [];
 
 const getVoices = () => {
   voices = synth.getVoices();
+  console.log(voices);
 
   voices.forEach(voice => {
     const option = document.createElement("option");
-    option.textContext = voice.name + "(" + voice.lang + ")";
+    option.textContent = voice.name + "(" + voice.lang + ")";
 
     option.setAttribute("data-lang", voice.lang);
     option.setAttribute("data-name", voice.name);
+    voiceSelect.appendChild(option);
   });
 };
 
